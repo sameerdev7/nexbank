@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8180";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8180";
 
 function getToken(): string | null {
   if (typeof window === "undefined") return null;

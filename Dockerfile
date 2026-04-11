@@ -4,7 +4,7 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-FROM openjdk:17
+FROM amazoncorretto:17
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8180
